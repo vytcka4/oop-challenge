@@ -43,3 +43,25 @@ car1.acce();
 // Test data:
 // § Data car 1: 'Ford' going at 120 km/h
 // GOOD LUCK �
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelarate() {
+    this.speed = this.speed + 10;
+    console.log(this.speed);
+  }
+  brake() {
+    this.speed = this.speed -5;
+    console.log(this.speed);
+  }
+
+  get speedUS() {
+    return (this.speed *= 1.6) 
+  }
+  set speedUS(){
+
+  }
+}
