@@ -52,10 +52,12 @@ class CarCl {
   accelarate() {
     this.speed = this.speed + 10;
     console.log(this.speed);
+    return this;
   }
   brake() {
     this.speed = this.speed - 5;
     console.log(this.speed);
+    return this;
   }
 
   get speedUS() {
@@ -113,3 +115,19 @@ tesla.accelarate();
 // Test data:
 // § Data car 1: 'Rivian' going at 120 km/h, with a charge of 23%
 // GOOD LUCK �
+
+class EVCL extends CarCl {
+  #charge;
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
+  accelarate() {
+    this.speed += 20;
+    this.charge -= 1;
+    console.log(
+      `${this.make} going at ${this.speed} and baterry is ${this.charge}`
+    );
+    return this;
+  }
+}
